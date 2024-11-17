@@ -11,7 +11,7 @@ const useGeminiApi = (name: string, trigger: boolean = false) => {
     const fetchData = async () => {
       const genAI = new GoogleGenerativeAI(API_KEY);
       const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-      const prompt = `Em uma frase, explique o significado do nome ${name}`;
+      const prompt = `Em uma frase, explique o significado do nome ${name} e o que ele representa`;
 
       try {
         const result = await model.generateContent(prompt);
