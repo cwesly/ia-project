@@ -77,7 +77,7 @@ src/
 ```
 
 ## Detalhes Técnicos
-- Utiliza React 18 com TypeScript para tipagem estática
+- Utiliza React 18.3 com TypeScript para tipagem estática
 - Componentes funcionais com hooks (useState, useEffect)
 - Estilização inline para componentes
 - Gerenciamento de estado local para dados do formulário
