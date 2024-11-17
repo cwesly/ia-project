@@ -19,7 +19,10 @@ const Input = ({ onSubmit }: InputProps) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        style={{ display: "flex", gap: "8px", justifyContent: "center" }}
+      >
         <input
           type="text"
           value={name}
@@ -28,7 +31,7 @@ const Input = ({ onSubmit }: InputProps) => {
             setShouldFetch(false);
           }}
         />
-        <Button type="submit">Buscar significado</Button>
+        <Button type="submit" children="Buscar significado" />
       </form>
       {loading && <p>Carregando...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
