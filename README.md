@@ -1,50 +1,96 @@
-# React + TypeScript + Vite
+# Significados - Consultador de Significados
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto React com TypeScript que permite aos usuários consultarem o significado de palavras utilizando a API do Google Gemini.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
+- React 18.3
+- TypeScript
+- Vite
+- Google Generative AI (Gemini API)
+- Axios
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
+- Interface de usuário com campo de entrada para palavras
+- Botão customizado para submissão
+- Integração com a API Gemini do Google
+- Feedback visual durante o carregamento
+- Tratamento de erros
+- Exibição do significado da palavra pesquisada
 
-## Expanding the ESLint configuration
+## Como Executar
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Pré-requisitos
+- Node.js (versão recomendada: 18.x ou superior)
+- npm ou yarn
+- Chave de API do Google Gemini
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Instalação
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone o repositório:
+```bash
+git clone [url-do-repositorio]
+cd ia-project
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Instale as dependências:
+```bash
+npm install
+# ou
+yarn install
 ```
+
+3. Configure as variáveis de ambiente:
+- Crie um arquivo `.env` na raiz do projeto
+- Adicione sua chave API do Google Gemini:
+```
+VITE_GEMINI_API_KEY=sua_chave_api_aqui
+```
+## 🎮 Como usar
+
+1. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+# ou
+yarn dev
+```
+2. Abra o navegador e acesse o projeto pelo link.
+
+3. Digite uma palavra no campo de busca e clique em "Buscar significado" para ver sua definição.
+
+## 🏗️ Scripts disponíveis
+
+- `npm run dev`: Inicia o servidor de desenvolvimento
+- `npm run build`: Compila o projeto para produção (TypeScript + Vite)
+- `npm run lint`: Executa a verificação de lint com ESLint
+- `npm run preview`: Visualiza a versão de produção localmente
+
+## Estrutura do Projeto
+```
+src/
+├── components/
+│   ├── Button.tsx    # Componente de botão reutilizável
+│   └── input.tsx     # Componente de entrada com integração Gemini
+├── hooks/
+│   └── useGeminiApi.ts # Hook personalizado para chamadas à API Gemini
+├── App.tsx           # Componente principal
+└── main.tsx         # Ponto de entrada da aplicação
+```
+
+## Detalhes Técnicos
+- Utiliza React 18 com TypeScript para tipagem estática
+- Componentes funcionais com hooks (useState, useEffect)
+- Estilização inline para componentes
+- Gerenciamento de estado local para dados do formulário
+- Tratamento assíncrono de chamadas à API
+- Feedback visual para estados de loading e erro
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+## Status do Projeto
+Em desenvolvimento ativo. Contribuições são bem-vindas!
