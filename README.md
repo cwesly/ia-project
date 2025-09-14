@@ -39,12 +39,12 @@ npm install
 yarn install
 ```
 
-3. Configure as variáveis de ambiente:
-- Crie um arquivo `.env` na raiz do projeto
-- Adicione sua chave API do Google Gemini:
-```
-VITE_GEMINI_API_KEY=sua_chave_api_aqui
-```
+3. **Adicione o arquivo `.env` na raiz do projeto:**
+   - Crie um arquivo chamado `.env` na raiz do projeto.
+   - Adicione sua chave API do Google Gemini:
+     ```
+     VITE_API_KEY=sua_chave_api_aqui
+     ```
 ## 🎮 Como usar
 
 1. Inicie o servidor de desenvolvimento:
@@ -53,7 +53,7 @@ npm run dev
 # ou
 yarn dev
 ```
-2. Abra o navegador e acesse o projeto pelo link.
+2. Abra o navegador e acesse o projeto pelo link exibido no terminal.
 
 3. Digite uma palavra no campo de busca e clique em "Buscar significado" para ver sua definição.
 
