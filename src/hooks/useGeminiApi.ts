@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { API_KEY } from '../constants';
 
 const useGeminiApi = (name: string, trigger: boolean = false) => {
@@ -9,18 +9,20 @@ const useGeminiApi = (name: string, trigger: boolean = false) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const genAI = new GoogleGenerativeAI(API_KEY);
-      const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+      const ai = new GoogleGenAI({ apiKey: API_KEY });
       const prompt = `Em uma frase, explique o significado do nome ${name} e o que ele representa`;
 
       try {
-        const result = await model.generateContent(prompt);
-        setMeaning(result.response.text());
+        const response = await ai.models.generateContent({
+          model: "gemini-2.5-pro",
+          contents: prompt,
+        });
+        setMeaning(response.text ?? null);
       } catch (err: any) {
-        if (err instanceof Error){
-          setError(err.message); 
+        if (err instanceof Error) {
+          setError(err.message);
         } else {
-           setError('Ocorreu um erro desconhecido.'); 
+          setError('Ocorreu um erro desconhecido.');
         }
       } finally {
         setLoading(false);
